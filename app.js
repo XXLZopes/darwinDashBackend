@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const app = express();
 app.use(express.json());
-const PORT = 3100;
+const PORT = process.env.PORT || 3100;
 
 
 const highScoreRouter = require("./routes/highscore");
