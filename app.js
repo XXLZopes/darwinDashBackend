@@ -1,8 +1,14 @@
 const mongoose = require("mongoose");
 const express = require("express");
+
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
 const app = express();
 app.use(express.json());
-const port = 3100;
+const PORT = 3100;
+
 
 const highScoreRouter = require("./routes/highscore");
 app.use("/score", highScoreRouter);
@@ -19,8 +25,8 @@ mongoose
     )
     .then(() => {
         console.log("Connected to MongoDB!");
-        app.listen(port, ()=> {
-            console.log(`Server running at http://localhost:${port}`);
+        app.listen(PORT, ()=> {
+            console.log(`Server running at http://localhost:${PORT}`);
         })
     })
     .catch((err) => {
