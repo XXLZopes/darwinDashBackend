@@ -22,7 +22,13 @@ const highScoreController = {
         .then((scoresArray) => {
             const length = scoresArray.length;
             const userScore = body.userScore;
-            const lowScore = scoresArray[length - 1].userScore;
+            console.log(body);
+            let lowScore;
+            if (scoresArray[length - 1] >= 0)
+                 lowScore = scoresArray[length - 1].userScore;
+            else
+                lowScore = false;
+            
 
 
             if (length < 11) 
@@ -79,6 +85,7 @@ const highScoreController = {
             }
         })
         .catch((err) => {
+            console.log(err)
             res.status(400).json(err);
         });
     },
