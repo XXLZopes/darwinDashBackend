@@ -31,6 +31,7 @@ body {
 }
 
 #screen {
+    overflow-y: scroll;
     width: 80%;
     height: 70%;
     background-color: rgb(0, 0, 160);
@@ -39,13 +40,42 @@ body {
     border-top: 3em solid black;
     border-left: 4em solid black;
     border-right: 4em solid black;
-
     box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 1);
+    position: inherit;
+    text-align: center;
+
+}
+
+#screen .starter-div{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#screen .starter-div p {
+    color: white;
 }
 #screen h1 {
     width: 100%;
+    position: sticky;
+    top: 1em;
+    margin: 1em 0px 1.5em 0px;
+}
+
+#creator-con {
     text-align: center;
-    margin: 0.5em 0px 1.5em 0px;
+    width: 100%;
+    margin-top: 3px;
+}
+
+#creator-con h3{
+    margin-bottom: 2.5em;
+}
+
+h2, h3 {
+    color: white;
+    text-shadow: -1px 0 rgb(60, 60, 60), 0 3px rgb(60, 60, 60), 1px 0 rgb(60, 60, 60), 0 -1px rgb(60, 60, 60);
+    padding-bottom: .2em;
 }
 
 #score-con {
@@ -55,12 +85,40 @@ body {
     margin-bottom: 2em;
 }
 
-h1, h3 {
+#low-score-con {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10em;
+    margin-bottom: 2em;
+    border-bottom: dashed black 2px;
+}
+
+@keyframes rainbow {
+    0% { color: red; }
+    32% { color: orange; }
+    48% { color: yellow; }
+    64% { color: green; }
+    80% { color: white; }
+    100% { color: red; }
+  }
+  
+  #low-score-con h3 {
+    animation: rainbow 4s linear infinite;
+    font-size: 3em;
+  }
+
+
+h1{
     color: rgb(255, 157, 52);
     background: linear-gradient(0deg, #fffc62, #FF0000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+#low-score-h1 {
+    font-size: 2em;
+    -webkit-text-fill-color: white;
+  }
 
 #score-con h3 {
     width: 50%;
@@ -83,7 +141,7 @@ h1, h3 {
     display: flex;
     justify-content: center;
     text-align: center;
-    z-index: 1;
+    z-index: 999;
 }
 
 .b-top {
@@ -92,7 +150,7 @@ h1, h3 {
     border-radius: 60px / 25px;
     position: absolute;
     top: -.4em;
-    z-index: 3;
+    z-index: 999;
     box-shadow: inset 0px 0px 1px rgba(255, 255, 255, .5);
     background-color: red;
 }

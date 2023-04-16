@@ -33,8 +33,6 @@ const highScoreController = {
 
             if (length < 11) 
                 return "add";
-            console.log(lowScore);
-            console.log(userScore);
 
             if (userScore < lowScore)
                 return scoresArray[length-1]._id;
