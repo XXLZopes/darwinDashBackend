@@ -113,12 +113,9 @@ document.getElementById('creditsButton').addEventListener('mousedown', () => {
 });
 
 
-const downloadButton = document.createElement('button');
-downloadButton.id = "download-button";
+const downloadButtonEl = document.createElement('a');
 
 document.getElementById('downloadButton').addEventListener('mousedown', () => {
-    const downloadButtonEl = document.createElement('button');
-    downloadButtonEl.id = "download-button";
     downloadButtonEl.innerText = "Download Darwin Dash";
 
     screenEl.innerHTML=
@@ -126,8 +123,147 @@ document.getElementById('downloadButton').addEventListener('mousedown', () => {
     <h1>Darwin Dash</h1>
     <div class="starter-div">
         <p>Welcome to Darwin Dash Use the Arcade Machine to navigate the page</p>
+        <a id="download-button" href="/index.css" download>Download Darwin Dash</a>
     </div>
-    `
 
-    screenEl.appendChild(downloadButtonEl);
+    <div id=star-con>
+                <p>Rate the App</p>
+                
+                <ul class="hover-list">
+                    <li>
+                        <span id="star1" class="material-symbols-outlined">
+                            star
+                        </span>
+                    </li>
+                    <li>
+                        <span id="star2" class="material-symbols-outlined">
+                            star
+                        </span>
+                    </li>
+                    <li>
+                        <span id="star3" class="material-symbols-outlined">
+                            star
+                        </span>
+                    </li>
+                    <li>
+                        <span id="star4" class="material-symbols-outlined">
+                            star
+                        </span>
+                    </li>
+                    <li>
+                        <span id="star5" class="material-symbols-outlined">
+                            star
+                        </span>
+                    </li>
+                </ul>
+        </div>
+    `
+    document.querySelectorAll(".hover-list li").forEach((element) => {
+        element.addEventListener("mouseover", function () {
+          let sibling = this.previousElementSibling;
+          while (sibling) {
+            sibling.classList += ("previous-hover");
+            sibling = sibling.previousElementSibling;
+          }
+        });
+      
+        element.addEventListener("mouseout", function () {
+          let sibling = this.previousElementSibling;
+          while (sibling) {
+            sibling.classList.remove("previous-hover");
+            sibling = sibling.previousElementSibling;
+          }
+        });
+      });
+});
+
+document.querySelectorAll(".hover-list li").forEach((element) => {
+    element.addEventListener("mouseover", function () {
+      let sibling = this.previousElementSibling;
+      while (sibling) {
+        sibling.classList += ("previous-hover");
+        sibling = sibling.previousElementSibling;
+      }
+    });
+  
+    element.addEventListener("mouseout", function () {
+      let sibling = this.previousElementSibling;
+      while (sibling) {
+        sibling.classList.remove("previous-hover");
+        sibling = sibling.previousElementSibling;
+      }
+    });
+  });
+
+  //click 
+  //if not 5 star then tell them they are wrong
+  //set all stars to     font-variation-settings:
+//                                  'FILL' 100,
+//                                  'wght' 400,
+//                                  'GRAD' 100,
+//                                  'opsz' 48
+// and then store in cookies
+
+const star1El = document.getElementById("star1");
+const star2El = document.getElementById("star2");
+const star3El = document.getElementById("star3");
+const star4El = document.getElementById("star4");
+const star5El = document.getElementById("star5");
+
+
+function setCookie(cName, cData, exDays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exDays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cName + "=" + cData + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cName) {
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cArray = decodedCookie.split(";");
+    let cObject = {};
+
+    cArray.forEach(element => {
+      let key = element.split("=")[0];
+      let value = element.split("=")[1];
+      cObject[[key]] = value;
+    });
+
+
+
+    return cObject[cName]
+  }
+
+  window.onload = ()=> {
+    if(getCookie("fivestars")) {
+        document.querySelector(".hover-list").classList += " rated";
+      }
+  };
+
+
+document.querySelectorAll(".star").forEach((element) => {
+    element.addEventListener("mousedown", function () {
+        if(getCookie("fivestars")) {
+            return;
+          }
+        const starId = element.id;
+        if (starId != "star5") {
+            window.alert("The correct answer was 5 stars... Let me fix that for you!")
+        }
+
+        document.querySelector(".hover-list").classList += " rated";
+
+      if(!getCookie("fivestars")) {
+        setCookie("fivestars", "true", 1);
+      }
+
+    })
+});
+
+
+
+
+
+star1El.addEventListener('mouseDown', ()=>{
+    star1El.previousElementSibling
 })
