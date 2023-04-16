@@ -130,7 +130,7 @@ document.getElementById('downloadButton').addEventListener('mousedown', () => {
     <h1>Darwin Dash</h1>
     <div class="starter-div">
         <p>Welcome to Darwin Dash Use the Arcade Machine to navigate the page</p>
-        <a id="download-button" href="/index.css" download>Download Darwin Dash</a>
+        <a id="download-button" href="/DarwinDash.zip" download>Download Darwin Dash</a>
     </div>
 
     <div id=star-con>
