@@ -138,27 +138,27 @@ document.getElementById('downloadButton').addEventListener('mousedown', () => {
                 
                 <ul class="hover-list">
                     <li>
-                        <span id="star1" class="material-symbols-outlined">
+                        <span id="star1" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star2" class="material-symbols-outlined">
+                        <span id="star2" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star3" class="material-symbols-outlined">
+                        <span id="star3" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star4" class="material-symbols-outlined">
+                        <span id="star4" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star5" class="material-symbols-outlined">
+                        <span id="star5" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
@@ -190,6 +190,7 @@ document.getElementById('downloadButton').addEventListener('mousedown', () => {
       document.querySelectorAll(".star").forEach((element) => {
         console.log(element);
         element.addEventListener("mousedown", function () {
+            console.log("down")
           const starId = element.id;
           if (starId != "star5" && !getCookie("fivestars")) {
             window.alert(
@@ -205,6 +206,9 @@ document.getElementById('downloadButton').addEventListener('mousedown', () => {
         });
       });
 });
+
+
+
 
 document.querySelectorAll(".hover-list li").forEach((element) => {
     element.addEventListener("mouseover", function () {
