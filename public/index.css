@@ -204,11 +204,12 @@ h1{
 
 .bluebutton {
     margin-top: 1em;
+    font-size: 1.1em;
 
 }
 .redbutton {
     margin-top: 2em;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 /* BUTTON COLORS */
