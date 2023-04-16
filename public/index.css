@@ -28,7 +28,7 @@ body {
     align-items: center;
     height: 90vh;
     width: 60%;
-    background-color: rgb(255, 157, 52);
+    background-color: rgb(255, 132, 0);
     /* position: relative; */
 }
 
@@ -229,16 +229,6 @@ h1{
 .redbutton {
     margin-top: 2em;
     font-size: 1.3em;
-}
-
-.bluebutton:hover {
-    margin-top: .9em;
-    font-size: 1.2em;
-
-}
-.redbutton:hover {
-    margin-top: 1.9em;
-    font-size: 1.4em;
 }
 
 /* BUTTON COLORS */

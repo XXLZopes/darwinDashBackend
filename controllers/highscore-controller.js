@@ -52,6 +52,8 @@ const highScoreController = {
         })
         .then((result) => {
 //Score doesn't effect database
+            if (body.userInitials.length != 3)
+                return res.status(400).json({message: "username must be 3 characters"})
             if (!result)
                 return res.status(200).json({message: "not good/bad enough to change anything"});
 
