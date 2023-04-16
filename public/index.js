@@ -18,7 +18,7 @@ document.getElementById('fetchHighScore').addEventListener('mousedown', async ()
         if (length > 1)
             userDataExcludingLowest = userData.slice(0, -1);
 
-        screenEl.innerHTML = "<h1> High Scores </h1>";
+        screenEl.innerHTML = "<div id='highscoreh1div'><h1> High Scores </h1> <div>";
         
             userDataExcludingLowest.map((user, index) => {
             const highScoreEl = document.createElement('div');
