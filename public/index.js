@@ -6,6 +6,10 @@ window.onload = () => {
 
 const screenEl = document.getElementById("screen");
 
+screenEl.addEventListener("mousedown", function(event) {
+  event.preventDefault()
+});
+
 document
   .getElementById("fetchHighScore")
   .addEventListener("mousedown", async () => {
@@ -24,7 +28,6 @@ document
       userDataExcludingLowest.map((user, index) => {
         const highScoreEl = document.createElement("div");
         highScoreEl.id = "score-con";
-        highScoreEl.setAttribute("tabindex", "3");
 
         const userInitialsEl = document.createElement("h3");
         userInitialsEl.classList += "user-initials";

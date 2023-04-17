@@ -48,6 +48,23 @@ body {
 
 }
 
+#screen:focus {
+    outline: none;
+    /* outline-offset: -2.5em -3em -2.5em -3em;  */
+    box-shadow:
+    inset -3px 3px 0 0 white, /* top */
+    inset 3px -3px 0 0 white, /* right */
+    inset 3px 3px 0 0 white, /* bottom */
+    inset -3px 3px 0 0 white; /* left */
+
+}
+
+#screen:focus:has(#highscoreh1div) {
+    box-shadow: none;
+    outline: solid white 2px;
+    outline-offset: -3em;
+}
+
 #screen .starter-div{
     text-align: center;
     width: 70%;
@@ -161,6 +178,26 @@ h1{
     justify-content: center;
     text-align: center;
     z-index: 999;
+}
+
+.button:hover > .b-top {
+    border: white solid 2px;
+    /* background-color: #fffc62; */
+}
+
+.button:hover > .b-middle{
+    /* background-color: #eeea00; */
+    border-left: white solid 2px;
+    border-right: white solid 2px;
+}
+.button:hover > .b-bottom{
+    /* background-color: #eeea00; */
+    border-bottom: white solid 1px;
+}
+
+.button:hover > .b-base {
+    /* background-color: #eeea00; */
+    border: white solid 2px;
 }
 
 .button:focus > .b-top {
@@ -391,9 +428,15 @@ h1{
 }
 
 #download-button:hover {
-    font-size: 1em;
-    padding: 1.5em 2.5em;
-    bottom: -.8em;
+    font-size: 1.2em;
+    bottom: -.3em;
+}
+
+#download-button:focus {
+    outline: white solid;
+    outline-offset: -.5px;
+    font-size: 1.2em;
+    bottom: -.3em;
 }
 
 #star-con {
@@ -418,8 +461,14 @@ li {
     text-align: center;      /* Center the text within each list item */
 }
 
+.star {
+    outline: none;
+}
+
 .material-symbols-outlined {
     margin-top: .5em;
+    text-shadow: -1px 0 black, 0 -1px black, 1px 0 black, 0 1px black;
+    stroke: black;
     color: gold;
     width: fit-content;
     height: fit-content;
@@ -440,6 +489,18 @@ li {
   'GRAD' 100,
   'opsz' 48
 }
+
+.material-symbols-outlined:focus {
+    color: gold;
+    width: fit-content;
+    height: fit-content;
+  font-variation-settings:
+  'FILL' 100,
+  'wght' 400,
+  'GRAD' 100,
+  'opsz' 48
+}
+
 
 .previous-hover span{
   font-variation-settings:
