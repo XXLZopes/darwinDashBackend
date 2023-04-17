@@ -115,16 +115,17 @@ document.getElementById("creditsButton").addEventListener("mousedown", () => {
   screenEl.appendChild(creatorsEl);
 });
 
-const downloadButtonEl = document.createElement("a");
-
 document.getElementById("downloadButton").addEventListener("mousedown", () => {
-  downloadButtonEl.innerText = "Download Darwin Dash";
+
+if (document.getElementById("originalh1"))
+  return;
 
   screenEl.innerHTML = `
     <h1>Darwin Dash</h1>
     <div class="starter-div">
         <p>Welcome to Darwin Dash Use the Arcade Machine to navigate the page</p>
-        <a id="download-button" href="/DarwinDash.zip" download>Download Darwin Dash</a>
+        <a 
+        tabindex=2 id="download-button" href="/DarwinDash.zip" download>Download Darwin Dash</a>
     </div>
 
     <div id=star-con>
