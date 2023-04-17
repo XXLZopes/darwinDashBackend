@@ -163,6 +163,34 @@ h1{
     z-index: 999;
 }
 
+.button:focus > .b-top {
+    border: white solid 2px;
+    /* background-color: #fffc62; */
+}
+
+.button:focus > .b-middle{
+    /* background-color: #eeea00; */
+    border-left: white solid 2px;
+    border-right: white solid 2px;
+}
+.button:focus > .b-bottom{
+    /* background-color: #eeea00; */
+    border-bottom: white solid 1px;
+}
+
+.button:focus > .b-base {
+    /* background-color: #eeea00; */
+    border: white solid 2px;
+}
+
+
+.button:focus > .alt {
+    /* display: initial; */
+    opacity: 1;
+    height: 1em;
+    transition: .4s;
+}
+
 .b-top {
     width: 2em;
     height: .7em;
@@ -336,6 +364,8 @@ h1{
     height: 1em;
     transition: .4s;
 }
+
+
 
 .alt:hover {
     display: none;
