@@ -6,8 +6,8 @@ window.onload = () => {
 
 const screenEl = document.getElementById("screen");
 
-screenEl.addEventListener("mousedown", function(event) {
-  event.preventDefault()
+screenEl.addEventListener("mousedown", function (event) {
+  event.preventDefault();
 });
 
 document
@@ -116,9 +116,9 @@ document.getElementById("creditsButton").addEventListener("mousedown", () => {
 });
 
 document.getElementById("downloadButton").addEventListener("mousedown", () => {
-
-if (document.getElementById("originalh1"))
-  return;
+  if (document.getElementById("originalh1")) {
+    return;
+  }
 
   screenEl.innerHTML = `
     <h1>Darwin Dash</h1>
@@ -133,27 +133,27 @@ if (document.getElementById("originalh1"))
                 
                 <ul class="hover-list">
                     <li>
-                        <span id="star1" class="material-symbols-outlined star">
+                        <span tabindex=3 id="star1" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star2" class="material-symbols-outlined star">
+                        <span tabindex=3 id="star2" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star3" class="material-symbols-outlined star">
+                        <span tabindex=3 id="star3" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star4" class="material-symbols-outlined star">
+                        <span tabindex=3 id="star4" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
                     <li>
-                        <span id="star5" class="material-symbols-outlined star">
+                        <span tabindex=3 id="star5" class="material-symbols-outlined star">
                             star
                         </span>
                     </li>
@@ -185,10 +185,8 @@ if (document.getElementById("originalh1"))
       star.removeAttribute("tabindex");
     });
   }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.querySelectorAll(".star");
-    buttons.forEach((button) => {
+  
+    document.querySelectorAll(".star").forEach((button) => {
       button.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
           button.dispatchEvent(
@@ -197,7 +195,6 @@ if (document.getElementById("originalh1"))
         }
       });
     });
-  });
 
   document.querySelectorAll(".star").forEach((element) => {
     console.log(element);
@@ -217,6 +214,8 @@ if (document.getElementById("originalh1"))
       }
     });
   });
+
+  
 });
 
 document.querySelectorAll(".hover-list li").forEach((element) => {

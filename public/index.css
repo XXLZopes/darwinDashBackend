@@ -180,25 +180,19 @@ h1{
     z-index: 999;
 }
 
-.button:hover > .b-top {
+/* .button:hover > .b-top {
     border: white solid 2px;
-    /* background-color: #fffc62; */
 }
-
 .button:hover > .b-middle{
-    /* background-color: #eeea00; */
     border-left: white solid 2px;
     border-right: white solid 2px;
 }
 .button:hover > .b-bottom{
-    /* background-color: #eeea00; */
     border-bottom: white solid 1px;
 }
-
 .button:hover > .b-base {
-    /* background-color: #eeea00; */
     border: white solid 2px;
-}
+} */
 
 .button:focus > .b-top {
     border: white solid 2px;
