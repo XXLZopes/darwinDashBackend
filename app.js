@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const express = require("express");
 
+require('dotenv').config();
+
 // if (process.env.NODE_ENV !== "production") {
 //     require("dotenv").config();
 // }
@@ -14,6 +16,8 @@ const PORT = process.env.PORT || 3100;
 
 const highScoreRouter = require("./routes/highscore");
 app.use("/score", highScoreRouter);
+
+const uri = process.env.MONGODB_URI;
 
 mongoose
     .connect(
