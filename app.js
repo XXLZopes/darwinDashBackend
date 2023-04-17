@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3100;
 const highScoreRouter = require("./routes/highscore");
 app.use("/score", highScoreRouter);
 
-
+const uri = "mongodb+srv://anthonycavuoti:eVB9EoxZtmbqmOI9@darwin-dash.b0xaiu8.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
     .connect(

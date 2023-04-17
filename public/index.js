@@ -10,9 +10,20 @@ screenEl.addEventListener("mousedown", function (event) {
   event.preventDefault();
 });
 
+
+const buttons = document.querySelectorAll(".button") 
+
+  buttons.forEach((button) => {
+    button.addEventListener("mousedown", function (event) {
+      event.preventDefault();
+    });
+  })
+
+
 document
   .getElementById("fetchHighScore")
   .addEventListener("mousedown", async () => {
+  
     console.log("clicked");
     try {
       const response = await fetch("/score");
@@ -185,7 +196,7 @@ document.getElementById("downloadButton").addEventListener("mousedown", () => {
       star.removeAttribute("tabindex");
     });
   }
-  
+
     document.querySelectorAll(".star").forEach((button) => {
       button.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
