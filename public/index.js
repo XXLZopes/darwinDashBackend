@@ -24,7 +24,7 @@ document
       userDataExcludingLowest.map((user, index) => {
         const highScoreEl = document.createElement("div");
         highScoreEl.id = "score-con";
-        highScoreEl.setAttribute("tabindex", "5");
+        highScoreEl.setAttribute("tabindex", "3");
 
         const userInitialsEl = document.createElement("h3");
         userInitialsEl.classList += "user-initials";
